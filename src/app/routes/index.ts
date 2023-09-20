@@ -5,9 +5,13 @@ import { academicSemesterRoutes } from '../modules/academicSemester/academicSeme
 import { buildingRoutes } from '../modules/building/building.routes';
 import { courseRoutes } from '../modules/course/course.routes';
 import { offeredCourseRoutes } from '../modules/offeredCourse/offeredCourse.routes';
+import { offeredCourseClassScheduleRoutes } from '../modules/offeredCourseClassSchedule/offeredCourseClassSchedule.routes';
 import { offeredCourseSectionRoutes } from '../modules/offeredCourseSection/offeredCourseSection.routes';
 import { roomRoutes } from '../modules/room/room.routes';
 import { semesterRegistrationRoutes } from '../modules/semesterRegistration/semesterRegistration.routes';
+import { studentEnrolledCourseRoutes } from '../modules/studentEnrolledCourse/studentEnrolledCourse.routes';
+import { studentEnrolledCourseMarkRoutes } from '../modules/studentEnrolledCourseMark/studentEnrolledCourseMark.routes';
+import { studentSemesterPaymentRoutes } from '../modules/studentSemesterPayment/studentSemesterPayment.routes';
 
 const router = express.Router();
 
@@ -47,6 +51,22 @@ const moduleRoutes = [
   {
     path: '/offered-course-sections',
     routes: offeredCourseSectionRoutes
+  },
+  {
+    path: '/offered-course-class-schedules',
+    routes: offeredCourseClassScheduleRoutes
+  },
+  {
+    path: '/student-enrolled-courses',
+    routes: studentEnrolledCourseRoutes
+  },
+  {
+    path: '/student-enrolled-course-marks',
+    routes: studentEnrolledCourseMarkRoutes
+  },
+  {
+    path: '/student-semester-payments',
+    routes: studentSemesterPaymentRoutes
   }
 ];
 
