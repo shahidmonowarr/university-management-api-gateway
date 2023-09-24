@@ -27,4 +27,14 @@ router.post(
   }
 );
 
+router.post(
+  '/create-admin',
+  auth(ENUM_USER_ROLE.SUPER_ADMIN),
+  FileUploadHelper.upload.single('file'),
+  (req: Request, res: Response, next: NextFunction) => {
+    req.body = UserValidation.createAdmin.parse(JSON.parse(req.body.data));
+    return UserController.createAdmin(req, res, next);
+  }
+);
+
 export const userRoutes = router;
