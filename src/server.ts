@@ -14,6 +14,7 @@ async function bootstrap() {
     if (server) {
       server.close(() => {
         logger.info('Server closed');
+        console.log('Server closed');
         process.exit(1);
       });
     } else {
@@ -23,6 +24,7 @@ async function bootstrap() {
 
   const unexpectedErrorHandler = (error: unknown) => {
     logger.error(error);
+    console.log(error);
     exitHandler();
   };
 
@@ -31,6 +33,7 @@ async function bootstrap() {
 
   process.on('SIGTERM', () => {
     logger.info('SIGTERM received');
+    console.log('SIGTERM received');
     if (server) {
       server.close();
     }
